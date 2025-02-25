@@ -12,8 +12,15 @@
   <% end %>
 
   <div>
+    <%= image_tag(@user.avatar_url) if @user.avatar? %>
+  </div>
+  <div>
     <%= form.label :avatar, style: "display: block" %>
-    <%= form.text_field :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
+  <div>
+    <%= form.label :remote_avatar_url, style: "display: block" %>
+    <%= form.text_field :remote_avatar_url %>
   </div>
 
   <div>
